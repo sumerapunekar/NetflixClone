@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Home from './Component/Home';
-import SignIn from './Component/SignIn'
+import Home from './Screens/Home';
+import SignIn from './Screens/SignIn'
 import { useState } from 'react';
 
 function App() {
