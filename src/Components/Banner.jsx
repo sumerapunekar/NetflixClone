@@ -11,13 +11,11 @@ function Banner() {
 
   useEffect(()=>{
     async function fetchData(){
-      const result = await axios.get(requests.fetchNetflixOriginals)
-      .then(response =>{setMovies(
-        response.data.result [Math.floor(Math.random() * response.data.results -1 )]
-      )} ).catch(err => console.log(err)) ;
+      await axios.get(requests.fetchNetflixOriginals)
+      .then(response => {
+        setMovies(response.data.results[Math.floor(Math.random() * (response.data.results.length -1))])
+      }).catch(err => console.log(err))
       
-      
-    
     }
     
     fetchData() ;
@@ -32,7 +30,7 @@ function Banner() {
    
     <div style={{
       backgroundImage: ` url('${base_url+movies?.backdrop_path}') `
-      }} className=" bg-no-repeat bg-cover bg-center">
+      }} className=" bg-no-repeat bg-cover bg-center h-[400px]">
           <div className='text-left text-white  font-serif'>
             <h1 className='text-6xl font-bold '>{movies?.name}</h1>
             <p className='text-md font-normal'>{truncate(movies?.overview,150)}</p>

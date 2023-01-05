@@ -15,7 +15,7 @@ function Home(props) {
         <button onClick={props.p2} className='bg-red-700 text-white items-center px-8 py-2 rounded-md'>SignIn</button>
      </div>
     </div>
-    {/* downside */}
+        {/* downside */}
     <div className='flex justify-center flex-col text-white mx-auto items-center space-y-4 mt-40'>
      <p className='font-extrabold text-6xl font-sans'>Unlimited movies,TV <br/><span className='px-12'>shows and more.</span></p>
      <p className='text-2xl font-bold font-serif'>Watch anywhere .Cancel anytime.</p>
