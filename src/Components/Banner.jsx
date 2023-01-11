@@ -6,9 +6,10 @@ import requests from '../Request';
 
 
 function Banner() {
+  
   const [movies, setMovies] = useState([]);
   const base_url = "https://image.tmdb.org/t/p/original/";
-
+  const authcheck = "klmnopqrstuvxyz9986";
   useEffect(()=>{
     async function fetchData(){
       await axios.get(requests.fetchNetflixOriginals)
@@ -35,7 +36,7 @@ function Banner() {
             <h1 className='text-6xl font-bold '>{movies?.name}</h1>
             <p className='text-md font-normal'>{truncate(movies?.overview,150)}</p>
            < div className='flex space-x-4'> 
-            <button className='px-8 py-2 mt-4 rounded-md items-center bg-white text-black font-semibold'><PlayArrowRoundedIcon/> Play</button>  
+            <a href={`/watch/${movies?.id}/${authcheck}`} className='px-8 py-2 mt-4 rounded-md items-center bg-white text-black font-semibold'><PlayArrowRoundedIcon/> Play</a>  
             <button className='px-8 py-2 mt-4 rounded-md items-center bg-gray-500 text-white font-semibold'>My List</button>
             </div> 
           </div>

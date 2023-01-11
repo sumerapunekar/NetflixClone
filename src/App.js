@@ -7,6 +7,7 @@ import HomeScreen from './Screens/HomeScreen';
 import { Route, Routes } from 'react-router-dom';
 import app from './Firebase'
 import { async } from '@firebase/util';
+import WatchMovie from './Screens/WatchMovie';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
   return (
     <div className="App bg-black">
         <Routes>
+          <Route path="/watch/:movieid/:auth" element={<WatchMovie/>}/>
           <Route path="/" element={user ? <HomeScreen/> : <SignIn handle={{createUser,loginUser}} Cred={cred} SCred={setCred}/>}/>
           <Route path="/login" element={<SignIn Cred={setCred}/>}/>
         </Routes>
